@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ParallaxBackground } from "@/components/ui/ParallaxBackground";
+import { ParallaxImage } from "@/components/ui/ParallaxImage";
 
 export const metadata: Metadata = {
   title: "About Sunspot Consultancy",
@@ -78,40 +79,55 @@ export default function AboutPage() {
           <div className="absolute right-[-10%] bottom-0 h-[300px] w-[300px] rounded-full bg-[radial-gradient(circle_at_center,rgba(242,178,26,0.04)_0%,transparent_70%)]" />
         </ParallaxBackground>
         
-        <div className="container relative z-10 grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="flex flex-col justify-start">
-            <ScrollReveal variant="fade-up">
-              <SectionHeader eyebrow="Who We Are" title="A trusted local intelligence partner for high-risk decisions." />
+        <div className="container relative z-10">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] items-center">
+            {/* Left Column: Team Workspace Image */}
+            <ScrollReveal variant="fade-right" duration={0.8} className="relative">
+              <div className="absolute -inset-4 rounded-[12px] bg-gradient-to-tr from-[var(--sunspot-teal)]/10 to-transparent blur-xl" />
+              <ParallaxImage
+                src="/images/sunspot-team-workspace.webp"
+                alt="Sunspot team collaboration and office workspace"
+                aspectRatio="aspect-[4/3]"
+                containerClassName="rounded-[12px] shadow-2xl border border-[var(--sunspot-line)] relative z-10"
+                speed={-0.05}
+              />
             </ScrollReveal>
-            
-            {/* Quote Card */}
-            <ScrollReveal variant="fade-up" delay={0.1}>
-              <div className="mt-8 rounded-[16px] border border-[var(--sunspot-line)] bg-white p-7 shadow-lg relative overflow-hidden">
-                <div className="absolute -right-4 -top-6 text-7xl font-serif text-[rgba(242,178,26,0.15)] select-none">“</div>
-                <p className="text-sm font-semibold italic text-[var(--sunspot-teal)] relative z-10 leading-relaxed pl-2">
-                  Operating in emerging and under-served markets requires more than data collection. It requires operational flexibility and deep market realism.
+
+            {/* Right Column: Text & Quote */}
+            <div className="flex flex-col justify-start">
+              <ScrollReveal variant="fade-left">
+                <SectionHeader eyebrow="Who We Are" title="A trusted local partner for high-risk decisions." />
+              </ScrollReveal>
+              
+              <ScrollReveal variant="fade-left" delay={0.1} className="mt-6 space-y-5 text-[15px] leading-8 text-[rgba(30,33,31,0.76)]">
+                <p className="font-bold text-[var(--sunspot-green)] text-[16px]">
+                  We support local and regional companies in understanding complex market environments through market research,
+                  distributor audits, competitor intelligence, field verification, and commercial monitoring solutions.
                 </p>
-              </div>
-            </ScrollReveal>
+                <p>
+                  In markets where visibility is limited and decision-making carries high risk, Sunspot Consultancy acts as a trusted local intelligence partner — helping organizations make smarter, faster, and more confident commercial decisions.
+                </p>
+                <p>
+                  Our strength combines deep local market understanding with multinational commercial experience, enabling us
+                  to bridge the gap between global business expectations and local market realities.
+                </p>
+                <p>
+                  We support companies across different stages of growth — from market entry and expansion planning to
+                  distributor evaluation, competitive positioning, operational assessment, and commercial performance improvement.
+                </p>
+              </ScrollReveal>
+
+              {/* Quote Card */}
+              <ScrollReveal variant="fade-up" delay={0.15}>
+                <div className="mt-8 rounded-[16px] border border-[var(--sunspot-line)] bg-white p-7 shadow-lg relative overflow-hidden">
+                  <div className="absolute -right-4 -top-6 text-7xl font-serif text-[rgba(242,178,26,0.15)] select-none">“</div>
+                  <p className="text-sm font-semibold italic text-[var(--sunspot-teal)] relative z-10 leading-relaxed pl-2">
+                    Operating in emerging and under-served markets requires more than data collection. It requires operational flexibility and deep market realism.
+                  </p>
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
-          
-          <ScrollReveal variant="fade-up" delay={0.15} className="space-y-6 text-[15px] leading-8 text-[rgba(30,33,31,0.76)] flex flex-col justify-center">
-            <p className="font-bold text-[var(--sunspot-green)] text-[16px]">
-              We support local and regional companies in understanding complex market environments through market research,
-              distributor audits, competitor intelligence, field verification, and commercial monitoring solutions.
-            </p>
-            <p>
-              In markets where visibility is limited and decision-making carries high risk, Sunspot Consultancy acts as a trusted local intelligence partner — helping organizations make smarter, faster, and more confident commercial decisions.
-            </p>
-            <p>
-              Our strength combines deep local market understanding with multinational commercial experience, enabling us
-              to bridge the gap between global business expectations and local market realities.
-            </p>
-            <p>
-              We support companies across different stages of growth — from market entry and expansion planning to
-              distributor evaluation, competitive positioning, operational assessment, and commercial performance improvement.
-            </p>
-          </ScrollReveal>
         </div>
       </section>
 

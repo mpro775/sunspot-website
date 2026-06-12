@@ -5,6 +5,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { industries } from "@/data/industries";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ParallaxBackground } from "@/components/ui/ParallaxBackground";
+import { ParallaxImage } from "@/components/ui/ParallaxImage";
 
 export const metadata: Metadata = {
   title: "Industries | Sunspot Consultancy",
@@ -15,20 +16,31 @@ export const metadata: Metadata = {
 export default function IndustriesPage() {
   return (
     <>
-      <section className="section relative overflow-hidden bg-[var(--sunspot-cream)]">
+      <section className="section relative overflow-hidden bg-[var(--sunspot-cream)] py-16 lg:py-24">
         <ParallaxBackground speed={-0.1}>
           <div className="absolute right-[5%] top-[-5%] h-80 w-80 rounded-full bg-[rgba(38,92,103,0.05)] blur-2xl" />
         </ParallaxBackground>
-        <div className="container relative z-10 max-w-4xl">
-          <ScrollReveal variant="fade-up">
+        <div className="container relative z-10 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center">
+          <ScrollReveal variant="fade-right">
             <span className="gold-rule mb-7" />
             <p className="eyebrow">Industries</p>
-            <h1 className="mt-4 text-[clamp(2.4rem,6vw,4.7rem)] font-[780] leading-[1.02] text-[var(--sunspot-green)]">
+            <h1 className="mt-4 text-[clamp(2.4rem,5vw,4.2rem)] font-[780] leading-[1.02] text-[var(--sunspot-green)]">
               Sector visibility for companies operating across Yemen’s commercial channels.
             </h1>
             <p className="lead mt-6">
               Sunspot supports organizations that need reliable market visibility, channel intelligence, and field verification across priority industries.
             </p>
+          </ScrollReveal>
+
+          <ScrollReveal variant="scale" duration={0.9} delay={0.2} className="relative">
+            <div className="absolute -inset-4 rounded-[12px] bg-gradient-to-tr from-[var(--sunspot-gold)]/10 to-transparent blur-xl" />
+            <ParallaxImage
+              src="/images/retail-distribution-vehicles.webp"
+              alt="Retail distribution vehicles representing logistics and channel coverage in Yemen"
+              aspectRatio="aspect-[4/3]"
+              containerClassName="rounded-[12px] shadow-2xl border border-[var(--sunspot-line)]"
+              speed={-0.06}
+            />
           </ScrollReveal>
         </div>
       </section>

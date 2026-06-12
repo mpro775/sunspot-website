@@ -6,6 +6,7 @@ import { ServiceIcon } from "@/components/ui/ServiceIcon";
 import { services } from "@/data/services";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ParallaxBackground } from "@/components/ui/ParallaxBackground";
+import { ParallaxImage } from "@/components/ui/ParallaxImage";
 
 export const metadata: Metadata = {
   title: "Services | Sunspot Consultancy",
@@ -18,20 +19,31 @@ const categories = ["Market Intelligence Services", "Business Consultancy Servic
 export default function ServicesPage() {
   return (
     <>
-      <section className="section relative overflow-hidden bg-[var(--sunspot-cream)]">
+      <section className="section relative overflow-hidden bg-[var(--sunspot-cream)] py-16 lg:py-24">
         <ParallaxBackground speed={-0.1}>
           <div className="absolute right-[5%] top-[-5%] h-80 w-80 rounded-full bg-[rgba(38,92,103,0.05)] blur-2xl" />
         </ParallaxBackground>
-        <div className="container relative z-10 max-w-4xl">
-          <ScrollReveal variant="fade-up">
+        <div className="container relative z-10 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center">
+          <ScrollReveal variant="fade-right">
             <span className="gold-rule mb-7" />
             <p className="eyebrow">Services</p>
-            <h1 className="mt-4 text-[clamp(2.4rem,6vw,4.7rem)] font-[780] leading-[1.02] text-[var(--sunspot-green)]">
-              Market intelligence and advisory services for confident commercial decisions.
+            <h1 className="mt-4 text-[clamp(2.4rem,5vw,4.2rem)] font-[780] leading-[1.02] text-[var(--sunspot-green)]">
+              Market intelligence &amp; advisory services for commercial visibility.
             </h1>
             <p className="lead mt-6">
               Sunspot combines field execution, commercial analysis, and practical advisory to support companies operating in complex and emerging markets.
             </p>
+          </ScrollReveal>
+
+          <ScrollReveal variant="scale" duration={0.9} delay={0.2} className="relative">
+            <div className="absolute -inset-4 rounded-[12px] bg-gradient-to-tr from-[var(--sunspot-teal)]/10 to-transparent blur-xl" />
+            <ParallaxImage
+              src="/images/generic-supermarket-products.webp"
+              alt="Supermarket shelves representing retail auditing and product monitoring services"
+              aspectRatio="aspect-[4/3]"
+              containerClassName="rounded-[12px] shadow-2xl border border-[var(--sunspot-line)]"
+              speed={-0.06}
+            />
           </ScrollReveal>
         </div>
       </section>
