@@ -1,12 +1,42 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Compass, Globe, ShieldCheck, TrendingUp } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ParallaxBackground } from "@/components/ui/ParallaxBackground";
 
+const whySunspot = [
+  {
+    title: "Deep Local Market Understanding",
+    description: "Operating in emerging and under-served markets requires more than data collection. It requires operational flexibility, local market understanding, and the ability to generate reliable insights under complex market conditions. We understand the realities, complexities, and operational challenges of the Yemeni market.",
+    iconName: "compass"
+  },
+  {
+    title: "International Business Mindset",
+    description: "Our team's experience of working with multinational companies enables us to communicate and operate according to international professional standards.",
+    iconName: "globe"
+  },
+  {
+    title: "Reliable Field Execution",
+    description: "We utilize structured field operations, digital data collection systems, GPS verification, and quality control processes to ensure reliable results.",
+    iconName: "shield"
+  },
+  {
+    title: "Commercially Focused Insights",
+    description: "We do not only collect data — we transform information into actionable business intelligence and strategic recommendations.",
+    iconName: "trend"
+  }
+];
+
+const whyIconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+  "compass": Compass,
+  "globe": Globe,
+  "shield": ShieldCheck,
+  "trend": TrendingUp
+};
+
 export const metadata: Metadata = {
-  title: "About Sunspot Consultancy",
+  title: "About Us | Sunspot Consultancy",
   description:
     "Learn about Sunspot Consultancy, a business intelligence and market advisory firm helping organizations navigate Yemen’s complex market."
 };
@@ -32,7 +62,7 @@ export default function AboutPage() {
             <span className="gold-rule mb-7" />
             <p className="eyebrow">About Us</p>
             <h1 className="mt-4 text-[clamp(2.4rem,5.5vw,4.5rem)] font-[800] leading-[1.05] text-[var(--sunspot-green)]">
-              Business Intelligence <span className="text-[var(--sunspot-teal)] font-[700]">&amp; Strategic Advisory</span> for Yemen
+              We are a Business Intelligence <span className="text-[var(--sunspot-teal)] font-[700]">&amp; Strategic Advisory</span> for Yemen
             </h1>
             <p className="lead mt-6 leading-relaxed">
               Sunspot Consultancy is a business intelligence and market advisory firm specialized in helping organizations navigate complex and emerging markets like Yemen through strategic insights, commercial intelligence, and field-driven market visibility solutions.
@@ -142,8 +172,7 @@ export default function AboutPage() {
               <div className="absolute top-0 left-0 w-full h-[4px] bg-[var(--sunspot-gold)]" />
               <p className="eyebrow !text-[var(--sunspot-gold)] tracking-widest">Our Mission</p>
               <p className="mt-6 text-[18px] leading-8 font-medium text-white/90">
-                To empower organizations with reliable market intelligence, strategic business insights, and actionable
-                commercial recommendations that support confident decision-making and sustainable growth in complex and emerging markets.
+                To empower organizations with reliable market intelligence, strategic business insights, and actionable recommendations that support confident decision-making and sustainable growth in Yemen complex market.
               </p>
             </div>
           </ScrollReveal>
@@ -153,11 +182,74 @@ export default function AboutPage() {
               <div className="absolute top-0 left-0 w-full h-[4px] bg-[var(--sunspot-teal)]" />
               <p className="eyebrow !text-[var(--sunspot-gold)] tracking-widest">Our Vision</p>
               <p className="mt-6 text-[18px] leading-8 font-medium text-white/90">
-                To become the leading business intelligence and market advisory partner for organizations operating in Yemen
-                and emerging markets across the region.
+                To become the leading business intelligence and market advisory partner for organizations seeking to understand, evaluate, and grow in the Yemeni market.
               </p>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Why Sunspot Section */}
+      <section className="section bg-[var(--sunspot-green)] text-white overflow-hidden relative border-t border-white/10">
+        {/* Parallax ambient glow background */}
+        <ParallaxBackground speed={0.15}>
+          <div className="absolute inset-0 bg-glow-radial opacity-40" />
+        </ParallaxBackground>
+
+        {/* Parallax Sun Motif inline shape */}
+        <ParallaxBackground speed={-0.08} className="absolute inset-0 hidden md:block">
+          <div 
+            className="absolute right-[4%] top-[28px] w-[190px] h-[190px] rounded-full opacity-50 pointer-events-none"
+            style={{
+              background: `
+                linear-gradient(var(--sunspot-gold), var(--sunspot-gold)) center top / 2px 58px no-repeat,
+                radial-gradient(circle at center, rgba(242, 178, 26, 0.2) 0 26%, transparent 27%),
+                conic-gradient(from 232deg, transparent 0 8deg, rgba(242, 178, 26, 0.35) 8deg 11deg, transparent 11deg 31deg)
+              `
+            }}
+          />
+        </ParallaxBackground>
+
+        <div className="container relative z-10 grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+          <ScrollReveal variant="fade-right" className="flex flex-col justify-center">
+            <span className="h-1 w-12 bg-[var(--sunspot-gold)] mb-6 rounded" />
+            <p className="eyebrow !text-[var(--sunspot-gold)]">Why Sunspot</p>
+            <h2 className="mt-3 text-[clamp(2rem,4vw,3.35rem)] font-[760] leading-[1.08] tracking-tight">
+              Local market reality, international business discipline.
+            </h2>
+            <p className="mt-5 leading-8 text-white/74 max-w-xl">
+              In markets where visibility is limited and decisions carry high risk, Sunspot acts as a trusted local
+              intelligence partner for smarter, faster, and more confident commercial decisions.
+            </p>
+          </ScrollReveal>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {whySunspot.map((item, index) => {
+              const Icon = whyIconMap[item.iconName || ""] || CheckCircle2;
+              return (
+                <ScrollReveal
+                  variant="fade-up"
+                  delay={index * 0.1}
+                  key={item.title}
+                  className="h-full"
+                >
+                  <div className="why-card group h-full">
+                    <span className="why-card-number">0{index + 1}</span>
+                    <div>
+                      <div className="why-icon-wrapper">
+                        <Icon size={20} />
+                      </div>
+                      <h3 className="why-card-title">
+                        {item.title}
+                      </h3>
+                      <p className="why-card-text">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
+          </div>
         </div>
       </section>
 

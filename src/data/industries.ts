@@ -7,11 +7,11 @@ export const industries = [
     relatedServices: ["Retail visibility", "Distributor audit", "Pricing intelligence", "Route-to-market insights"]
   },
   {
-    slug: "food-beverage",
-    title: "Food & Beverage",
+    slug: "banking-financial-services",
+    title: "Banking & Financial Services",
     description:
-      "Helping food and beverage brands monitor shelf execution, availability, promotional activity, and category movement across retail channels.",
-    relatedServices: ["Merchandising audit", "Mystery shopping", "Promotion monitoring", "Category research"]
+      "Supporting banking and financial institutions with service quality checks, customer experience assessments, competitor intelligence, and field verification for agent networks.",
+    relatedServices: ["Mystery shopping", "Service quality review", "Customer experience assessment", "Field verification"]
   },
   {
     slug: "consumer-electronics",
@@ -22,9 +22,9 @@ export const industries = [
   },
   {
     slug: "telecom",
-    title: "Telecom",
+    title: "Telecom & Technology",
     description:
-      "Supporting telecom teams with market visibility, channel monitoring, service experience checks, and commercial performance insights.",
+      "Supporting telecom and technology teams with market visibility, channel monitoring, service experience checks, and commercial performance insights.",
     relatedServices: ["Mystery shopping", "Channel monitoring", "Field verification", "Service quality review"]
   },
   {

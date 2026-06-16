@@ -32,12 +32,28 @@ export default function ServicesPage() {
             <p className="lead mt-6">
               Sunspot combines field execution, commercial analysis, and practical advisory to support companies operating in complex and emerging markets.
             </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a href="#market-intelligence" className="btn btn-secondary text-sm font-bold flex items-center gap-2 py-2.5 px-5 shadow-sm hover:shadow-md transition-all duration-300">
+                <span>Market Intelligence Services</span>
+                <ArrowRight size={14} className="rotate-90 text-[var(--sunspot-gold)] transition-transform duration-300 group-hover:translate-y-0.5" />
+              </a>
+              <a href="#business-consultancy" className="btn btn-secondary text-sm font-bold flex items-center gap-2 py-2.5 px-5 shadow-sm hover:shadow-md transition-all duration-300">
+                <span>Business Consultancy Services</span>
+                <ArrowRight size={14} className="rotate-90 text-[var(--sunspot-gold)] transition-transform duration-300 group-hover:translate-y-0.5" />
+              </a>
+            </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {categories.map((category, categoryIndex) => (
-        <section className={categoryIndex === 0 ? "section bg-[#fbfaf6] relative overflow-hidden" : "section bg-[var(--sunspot-cream)] relative overflow-hidden"} key={category}>
+      {categories.map((category, categoryIndex) => {
+        const sectionId = category === "Market Intelligence Services" ? "market-intelligence" : "business-consultancy";
+        return (
+          <section 
+            id={sectionId}
+            className={categoryIndex === 0 ? "section bg-[#fbfaf6] relative overflow-hidden" : "section bg-[var(--sunspot-cream)] relative overflow-hidden"} 
+            key={category}
+          >
           {categoryIndex === 0 ? (
             <ParallaxBackground speed={0.08}>
               <div className="absolute left-[-10%] top-1/2 -translate-y-1/2 h-80 w-80 rounded-full bg-[rgba(38,92,103,0.03)] blur-2xl" />
@@ -79,8 +95,9 @@ export default function ServicesPage() {
                 ))}
             </div>
           </div>
-        </section>
-      ))}
+          </section>
+        );
+      })}
 
       <section className="section bg-[#fbfaf6] overflow-hidden relative">
         <div className="container relative z-10">
@@ -89,7 +106,7 @@ export default function ServicesPage() {
               <div className="absolute inset-0 bg-glow-radial opacity-35 pointer-events-none" />
               <p className="eyebrow !text-[var(--sunspot-gold)]">Need a tailored scope?</p>
               <h2 className="mt-3 max-w-3xl text-[clamp(2rem,4vw,3.3rem)] font-[760] leading-tight relative z-10">
-                We design the right intelligence framework around your business question.
+                We design the right intelligence framework to answer your critical business questions.
               </h2>
               <Link className="btn btn-primary mt-8 relative z-10" href="/contact">
                 Contact Sunspot <ArrowRight size={18} />

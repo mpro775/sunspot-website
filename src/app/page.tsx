@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ClipboardCheck, FileSearch, LineChart, MapPinned, ShoppingBasket, Utensils, Smartphone, Wifi, Truck, Store, X, Compass, Globe, ShieldCheck, TrendingUp } from "lucide-react";
+import { ArrowRight, CheckCircle2, ClipboardCheck, FileSearch, LineChart, MapPinned, ShoppingBasket, Landmark, Smartphone, Wifi, Truck, Store, X, Compass, Globe, ShieldCheck, TrendingUp } from "lucide-react";
 import type { Service } from "@/data/services";
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
 import { ParallaxImage } from "@/components/ui/ParallaxImage";
@@ -12,7 +12,7 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const industryIconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   "fmcg": ShoppingBasket,
-  "food-beverage": Utensils,
+  "banking-financial-services": Landmark,
   "consumer-electronics": Smartphone,
   "telecom": Wifi,
   "retail-distribution": Truck
@@ -210,6 +210,28 @@ export default function Home() {
               <p className="text-4xl font-extrabold tracking-tight text-[var(--sunspot-green)] lg:text-5xl">15+ Yrs</p>
               <p className="mt-2 text-xs font-bold uppercase tracking-wider text-[var(--sunspot-teal)]">Advisory Lead</p>
               <p className="mt-1 text-xs leading-relaxed text-[rgba(30,33,31,0.6)]">Rooted in international standards</p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Who We Are Section */}
+      <section className="section bg-[var(--sunspot-cream)] border-b border-[var(--sunspot-line)]">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center">
+            <ScrollReveal variant="fade-up">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[var(--sunspot-mist)] px-3.5 py-1.5 border border-[var(--sunspot-line)] mb-6">
+                <span className="h-1.5 w-1.5 rounded-full bg-[var(--sunspot-gold)]" />
+                <p className="text-[10px] font-black uppercase tracking-wider text-[var(--sunspot-teal)]">
+                  Who We Are
+                </p>
+              </div>
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-[760] leading-[1.15] tracking-tight text-[var(--sunspot-green)] mb-6">
+                Your Strategic Entryway to Yemen
+              </h2>
+              <p className="text-base md:text-lg leading-relaxed text-[rgba(30,33,31,0.76)] font-medium">
+                Sunspot Consultancy is a business intelligence and strategic advisory firm established to help organizations navigate Yemen complex market through reliable market intelligence, commercial insights, and practical business solutions.
+              </p>
             </ScrollReveal>
           </div>
         </div>

@@ -9,7 +9,7 @@ import { ParallaxBackground } from "@/components/ui/ParallaxBackground";
 export const metadata: Metadata = {
   title: "Industries | Sunspot Consultancy",
   description:
-    "Sunspot supports FMCG, food and beverage, consumer electronics, telecom, retail, and distribution businesses in Yemen."
+    "Sunspot supports FMCG, banking, financial services, consumer electronics, telecom and technology, retail, and distribution businesses in Yemen."
 };
 
 export default function IndustriesPage() {

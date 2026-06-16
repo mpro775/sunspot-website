@@ -80,9 +80,7 @@ export function Header() {
               </a>
             </div>
             <div className="flex items-center gap-4 opacity-85">
-              <span>Market Intelligence & Strategic Advisory</span>
-              <span className="h-3 w-px bg-white/20" />
-              <span className="text-[var(--sunspot-gold)] font-bold">Yemen & Emerging Markets</span>
+              <span>The Trusted Market Intelligence & Strategic Advisory Partner for Yemen</span>
             </div>
           </div>
         </div>
