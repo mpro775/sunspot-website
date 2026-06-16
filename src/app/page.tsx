@@ -177,7 +177,7 @@ export default function Home() {
             </motion.div>
             
             <ParallaxImage
-              src="/images/market-intelligence-hero.png"
+              src="/images/market-intelligence-hero.webp"
               alt="Market intelligence workspace with maps, retail distribution routes, charts, and field research materials"
               priority
               speed={-0.08}
@@ -187,33 +187,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust & Statistics Banner */}
-      <section className="relative z-20 -mt-8 border-y border-[var(--sunspot-line)] bg-white py-12 shadow-sm">
-        <div className="container">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            <ScrollReveal variant="fade-up" duration={0.6} delay={0.05} className="text-center md:text-left transition-all duration-300 hover:translate-y-[-2px]">
-              <p className="text-4xl font-extrabold tracking-tight text-[var(--sunspot-green)] lg:text-5xl">98.4%</p>
-              <p className="mt-2 text-xs font-bold uppercase tracking-wider text-[var(--sunspot-teal)]">Field Accuracy</p>
-              <p className="mt-1 text-xs leading-relaxed text-[rgba(30,33,31,0.6)]">Validated by GPS and photo audits</p>
-            </ScrollReveal>
-            <ScrollReveal variant="fade-up" duration={0.6} delay={0.15} className="text-center md:text-left border-l border-[var(--sunspot-line)] pl-4 md:pl-8 transition-all duration-300 hover:translate-y-[-2px]">
-              <p className="text-4xl font-extrabold tracking-tight text-[var(--sunspot-green)] lg:text-5xl">50+</p>
-              <p className="mt-2 text-xs font-bold uppercase tracking-wider text-[var(--sunspot-teal)]">Districts Covered</p>
-              <p className="mt-1 text-xs leading-relaxed text-[rgba(30,33,31,0.6)]">Active country-wide field coverage</p>
-            </ScrollReveal>
-            <ScrollReveal variant="fade-up" duration={0.6} delay={0.25} className="text-center md:text-left border-l-0 md:border-l border-[var(--sunspot-line)] pl-0 md:pl-8 transition-all duration-300 hover:translate-y-[-2px]">
-              <p className="text-4xl font-extrabold tracking-tight text-[var(--sunspot-green)] lg:text-5xl">500k+</p>
-              <p className="mt-2 text-xs font-bold uppercase tracking-wider text-[var(--sunspot-teal)]">Outlets Mapped</p>
-              <p className="mt-1 text-xs leading-relaxed text-[rgba(30,33,31,0.6)]">Extensive retail universe database</p>
-            </ScrollReveal>
-            <ScrollReveal variant="fade-up" duration={0.6} delay={0.35} className="text-center md:text-left border-l border-[var(--sunspot-line)] pl-4 md:pl-8 transition-all duration-300 hover:translate-y-[-2px]">
-              <p className="text-4xl font-extrabold tracking-tight text-[var(--sunspot-green)] lg:text-5xl">15+ Yrs</p>
-              <p className="mt-2 text-xs font-bold uppercase tracking-wider text-[var(--sunspot-teal)]">Advisory Lead</p>
-              <p className="mt-1 text-xs leading-relaxed text-[rgba(30,33,31,0.6)]">Rooted in international standards</p>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+
 
       {/* Who We Are Section */}
       <section className="section bg-[var(--sunspot-cream)] border-b border-[var(--sunspot-line)]">

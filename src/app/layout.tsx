@@ -25,6 +25,11 @@ export const metadata: Metadata = {
     title: "Sunspot Consultancy",
     description: "Business intelligence and strategic advisory for Yemen and emerging markets.",
     images: ["/images/market-intelligence-hero.png"]
+  },
+  icons: {
+    icon: "/images/icon.png",
+    shortcut: "/images/icon.png",
+    apple: "/images/icon.png"
   }
 };
 
